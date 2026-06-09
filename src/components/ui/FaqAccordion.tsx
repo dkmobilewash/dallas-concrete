@@ -1,0 +1,39 @@
+'use client'
+
+import { useState } from 'react'
+import FaqSchema from '@/components/seo/FaqSchema'
+
+interface FaqItem {
+  question: string
+  answer: string
+}
+
+export default function FaqAccordion({ faqs }: { faqs: FaqItem[] }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  return (
+    <>
+      <FaqSchema faqs={faqs} />
+      <div className="space-y-3">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border border-brand-gray-mid/30 rounded-lg overflow-hidden">
+            <button
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              className="w-full flex items-center justify-between p-4 text-left hover:bg-brand-gray-light/50 transition-colors"
+            >
+              <span className="font-semibold text-brand-charcoal pr-4">{faq.question}</span>
+              <span className="text-brand-orange text-xl font-bold shrink-0">
+                {openIndex === index ? '−' : '+'}
+              </span>
+            </button>
+            {openIndex === index && (
+              <div className="px-4 pb-4 text-brand-gray leading-relaxed">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
+  )
+}
