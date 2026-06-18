@@ -1,11 +1,6 @@
 import FaqAccordion from '@/components/ui/FaqAccordion'
 
-interface FaqSectionProps {
-  title?: string
-  faqs: { question: string; answer: string }[]
-}
-
-export default function FaqSection({ title = 'Frequently Asked Questions', faqs }: FaqSectionProps) {
+export default function FaqSection({ title = 'Frequently Asked Questions', faqs }: { title?: string; faqs: { question: string; answer: string }[] }) {
   return (
     <section className="py-16 md:py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

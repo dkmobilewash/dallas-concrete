@@ -1,11 +1,6 @@
 import { site } from '@/data/site'
 
-interface BreadcrumbItem {
-  name: string
-  href: string
-}
-
-export default function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
+export default function BreadcrumbSchema({ items }: { items: { name: string; href: string }[] }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

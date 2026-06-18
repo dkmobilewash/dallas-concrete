@@ -1,11 +1,6 @@
 import { site } from '@/data/site'
 
-interface ServiceSchemaProps {
-  name: string
-  description: string
-}
-
-export default function ServiceSchema({ name, description }: ServiceSchemaProps) {
+export default function ServiceSchema({ name, description }: { name: string; description: string }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -16,10 +11,7 @@ export default function ServiceSchema({ name, description }: ServiceSchemaProps)
       name: site.name,
       telephone: site.phone,
     },
-    areaServed: {
-      '@type': 'Place',
-      name: 'Dallas, TX',
-    },
+    areaServed: { '@type': 'Place', name: 'Dallas, TX' },
   }
 
   return (

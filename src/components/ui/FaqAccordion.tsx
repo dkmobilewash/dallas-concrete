@@ -3,12 +3,7 @@
 import { useState } from 'react'
 import FaqSchema from '@/components/seo/FaqSchema'
 
-interface FaqItem {
-  question: string
-  answer: string
-}
-
-export default function FaqAccordion({ faqs }: { faqs: FaqItem[] }) {
+export default function FaqAccordion({ faqs }: { faqs: { question: string; answer: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (

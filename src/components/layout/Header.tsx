@@ -20,11 +20,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header
-      className={`sticky top-0 z-50 bg-brand-charcoal transition-all ${
-        scrolled ? 'border-b border-brand-gray-mid/20' : ''
-      }`}
-    >
+    <header className={`sticky top-0 z-50 bg-brand-charcoal transition-all ${scrolled ? 'border-b border-brand-gray-mid/20' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="text-white font-bold text-lg md:text-xl">
@@ -32,22 +28,14 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
-            <div
-              className="relative group"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
+            <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
               <button className="flex items-center gap-1 text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                 Services <ChevronDown className="w-4 h-4" />
               </button>
               {servicesOpen && (
                 <div className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-lg border border-brand-gray-mid/20 py-2">
                   {services.map((s) => (
-                    <Link
-                      key={s.slug}
-                      href={`/services/${s.slug}`}
-                      className="block px-4 py-2 text-sm text-brand-charcoal hover:bg-brand-gray-light hover:text-brand-orange transition-colors"
-                    >
+                    <Link key={s.slug} href={`/services/${s.slug}`} className="block px-4 py-2 text-sm text-brand-charcoal hover:bg-brand-gray-light hover:text-brand-orange transition-colors">
                       {s.name}
                     </Link>
                   ))}
@@ -55,22 +43,14 @@ export default function Header() {
               )}
             </div>
 
-            <div
-              className="relative group"
-              onMouseEnter={() => setAreasOpen(true)}
-              onMouseLeave={() => setAreasOpen(false)}
-            >
+            <div className="relative" onMouseEnter={() => setAreasOpen(true)} onMouseLeave={() => setAreasOpen(false)}>
               <button className="flex items-center gap-1 text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                 Service Areas <ChevronDown className="w-4 h-4" />
               </button>
               {areasOpen && (
                 <div className="absolute top-full left-0 w-56 bg-white rounded-lg shadow-lg border border-brand-gray-mid/20 py-2">
                   {cities.map((c) => (
-                    <Link
-                      key={c.slug}
-                      href={`/service-areas/${c.slug}`}
-                      className="block px-4 py-2 text-sm text-brand-charcoal hover:bg-brand-gray-light hover:text-brand-orange transition-colors"
-                    >
+                    <Link key={c.slug} href={`/service-areas/${c.slug}`} className="block px-4 py-2 text-sm text-brand-charcoal hover:bg-brand-gray-light hover:text-brand-orange transition-colors">
                       {c.name}, TX
                     </Link>
                   ))}
@@ -78,39 +58,24 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/about" className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
-              About
-            </Link>
-            <Link href="/blog" className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
-              Blog
-            </Link>
-            <Link href="/contact" className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
-              Contact
-            </Link>
+            <Link href="/about" className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">About</Link>
+            <Link href="/blog" className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Blog</Link>
+            <Link href="/contact" className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Contact</Link>
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href={site.phoneHref}
-              className="hidden sm:inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-dark text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
-            >
+            <a href={site.phoneHref} className="hidden sm:inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-dark text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors">
               <Phone className="w-4 h-4" />
               Call {site.phone}
             </a>
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden text-white p-2"
-              aria-label="Toggle menu"
-            >
+            <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-white p-2" aria-label="Toggle menu">
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {mobileOpen && (
-        <MobileNav onClose={() => setMobileOpen(false)} />
-      )}
+      {mobileOpen && <MobileNav onClose={() => setMobileOpen(false)} />}
     </header>
   )
 }
@@ -123,67 +88,34 @@ function MobileNav({ onClose }: { onClose: () => void }) {
     <div className="lg:hidden bg-brand-charcoal border-t border-brand-gray-mid/20">
       <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1">
         <div>
-          <button
-            onClick={() => setServicesExpanded(!servicesExpanded)}
-            className="flex items-center justify-between w-full text-white/90 hover:text-white py-2 text-sm font-medium"
-          >
+          <button onClick={() => setServicesExpanded(!servicesExpanded)} className="flex items-center justify-between w-full text-white/90 hover:text-white py-2 text-sm font-medium">
             Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesExpanded ? 'rotate-180' : ''}`} />
           </button>
           {servicesExpanded && (
             <div className="pl-4 space-y-1">
               {services.map((s) => (
-                <Link
-                  key={s.slug}
-                  href={`/services/${s.slug}`}
-                  onClick={onClose}
-                  className="block text-white/70 hover:text-brand-orange py-1.5 text-sm transition-colors"
-                >
-                  {s.name}
-                </Link>
+                <Link key={s.slug} href={`/services/${s.slug}`} onClick={onClose} className="block text-white/70 hover:text-brand-orange py-1.5 text-sm transition-colors">{s.name}</Link>
               ))}
             </div>
           )}
         </div>
-
         <div>
-          <button
-            onClick={() => setAreasExpanded(!areasExpanded)}
-            className="flex items-center justify-between w-full text-white/90 hover:text-white py-2 text-sm font-medium"
-          >
+          <button onClick={() => setAreasExpanded(!areasExpanded)} className="flex items-center justify-between w-full text-white/90 hover:text-white py-2 text-sm font-medium">
             Service Areas <ChevronDown className={`w-4 h-4 transition-transform ${areasExpanded ? 'rotate-180' : ''}`} />
           </button>
           {areasExpanded && (
             <div className="pl-4 space-y-1">
               {cities.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/service-areas/${c.slug}`}
-                  onClick={onClose}
-                  className="block text-white/70 hover:text-brand-orange py-1.5 text-sm transition-colors"
-                >
-                  {c.name}, TX
-                </Link>
+                <Link key={c.slug} href={`/service-areas/${c.slug}`} onClick={onClose} className="block text-white/70 hover:text-brand-orange py-1.5 text-sm transition-colors">{c.name}, TX</Link>
               ))}
             </div>
           )}
         </div>
-
-        <Link href="/about" onClick={onClose} className="block text-white/90 hover:text-white py-2 text-sm font-medium">
-          About
-        </Link>
-        <Link href="/blog" onClick={onClose} className="block text-white/90 hover:text-white py-2 text-sm font-medium">
-          Blog
-        </Link>
-        <Link href="/contact" onClick={onClose} className="block text-white/90 hover:text-white py-2 text-sm font-medium">
-          Contact
-        </Link>
-
-        <a
-          href={site.phoneHref}
-          className="flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-dark text-white text-sm font-semibold px-4 py-3 rounded-md mt-4 transition-colors"
-        >
-          <Phone className="w-4 h-4" />
-          Call {site.phone}
+        <Link href="/about" onClick={onClose} className="block text-white/90 hover:text-white py-2 text-sm font-medium">About</Link>
+        <Link href="/blog" onClick={onClose} className="block text-white/90 hover:text-white py-2 text-sm font-medium">Blog</Link>
+        <Link href="/contact" onClick={onClose} className="block text-white/90 hover:text-white py-2 text-sm font-medium">Contact</Link>
+        <a href={site.phoneHref} className="flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-dark text-white text-sm font-semibold px-4 py-3 rounded-md mt-4 transition-colors">
+          <Phone className="w-4 h-4" />Call {site.phone}
         </a>
       </nav>
     </div>

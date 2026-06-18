@@ -2,12 +2,7 @@ import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
-interface BreadcrumbItem {
-  name: string
-  href: string
-}
-
-export default function BreadcrumbNav({ items }: { items: BreadcrumbItem[] }) {
+export default function BreadcrumbNav({ items }: { items: { name: string; href: string }[] }) {
   return (
     <>
       <BreadcrumbSchema items={items} />
