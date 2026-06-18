@@ -3,7 +3,7 @@ import { Car, Sofa, Footprints, Building2, Layers, Palette, Warehouse, ArrowRigh
 import type { Service } from '@/data/services'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Car, Sofa, Footprints, Building2, Layers, Palette, Warehouse,
+  Car, Sofa, FootprintsIcon: Footprints, Building2, Layers, Palette, Warehouse,
 }
 
 const descriptions: Record<string, string> = {

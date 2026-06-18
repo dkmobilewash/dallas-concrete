@@ -41,7 +41,7 @@ export const services: Service[] = [
     metaTitle: 'Concrete Walkway Installation Dallas TX | Dallas Concrete Solutions',
     metaDescription: 'Concrete walkway and sidewalk installation in Dallas, TX. Safe, durable paths for residential and commercial properties. Free estimates.',
     heroSubhead: 'Safe, clean pathways that add curb appeal and function to your property.',
-    icon: 'Footprints',
+    icon: 'FootprintsIcon',
     relatedSlugs: ['concrete-driveways', 'concrete-patios', 'stamped-concrete'],
   },
   {
