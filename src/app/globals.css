@@ -5,3 +5,12 @@
 body {
   color: #1C1C1E;
 }
+
+.prose-brand {
+  --tw-prose-headings: #1C1C1E;
+  --tw-prose-body: #6B7280;
+  --tw-prose-bold: #1C1C1E;
+  --tw-prose-links: #E8520A;
+  --tw-prose-bullets: #E8520A;
+  --tw-prose-counters: #E8520A;
+}

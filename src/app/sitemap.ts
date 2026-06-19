@@ -1,6 +1,7 @@
 import { services } from '@/data/services'
 import { cities } from '@/data/cities'
 import { site } from '@/data/site'
+import { getAllPosts } from '@/lib/blog'
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  const blogUrls = getAllPosts().map((post) => ({
+    url: `${site.baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'yearly' as const,
+    priority: 0.6,
+  }))
+
   return [
     { url: site.baseUrl, priority: 1.0, changeFrequency: 'weekly' },
     { url: `${site.baseUrl}/about`, priority: 0.6, changeFrequency: 'yearly' },
@@ -25,5 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.baseUrl}/blog`, priority: 0.5, changeFrequency: 'weekly' },
     ...serviceUrls,
     ...cityUrls,
+    ...blogUrls,
   ]
 }
