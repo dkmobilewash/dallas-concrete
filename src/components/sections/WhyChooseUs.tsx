@@ -5,7 +5,7 @@ const reasons = [
   { icon: Users, title: 'Experienced, Professional Crews', description: 'Our crews bring hands-on concrete experience to every project, from small residential jobs to large commercial pours.' },
   { icon: Building, title: 'Residential and Commercial Capacity', description: "Whether it's a backyard patio or a commercial parking lot, we have the equipment and expertise to handle the scope." },
   { icon: MessageSquare, title: 'Clear Communication and Honest Timelines', description: 'We keep you informed at every stage, provide realistic schedules, and follow through on what we promise.' },
-  { icon: Thermometer, title: 'Built for North Texas Conditions', description: 'We account for expansive clay soils, extreme summer heat, and occasional freeze-thaw cycles in every installation.' },
+  { icon: Thermometer, title: 'Durable Installs Built for North Texas Conditions', description: 'We account for expansive clay soils, extreme summer heat, and occasional freeze-thaw cycles in every installation.' },
   { icon: Sparkles, title: 'Attention to Finish, Detail, and Cleanup', description: 'From clean edges and proper grading to thorough jobsite cleanup, we treat your property with respect.' },
 ]
 
