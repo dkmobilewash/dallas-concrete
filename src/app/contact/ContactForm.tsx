@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 
-// TODO: Connect to form service (e.g., Resend, Formspree, or Netlify Forms)
-
 export default function ContactForm({ services, cities }: { services: { slug: string; name: string }[]; cities: { slug: string; name: string }[] }) {
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   if (submitted) {
     return (
@@ -16,8 +16,46 @@ export default function ContactForm({ services, cities }: { services: { slug: st
     )
   }
 
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setError('')
+    setLoading(true)
+
+    const form = e.currentTarget
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      service: (form.elements.namedItem('service') as HTMLSelectElement).selectedOptions[0]?.text || '',
+      city: (form.elements.namedItem('city') as HTMLSelectElement).selectedOptions[0]?.text || '',
+      description: (form.elements.namedItem('description') as HTMLTextAreaElement).value,
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (!res.ok) {
+        const body = await res.json()
+        throw new Error(body.error || 'Something went wrong.')
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please call us at 214-239-0709.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
-    <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800 text-sm">{error}</div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-brand-charcoal mb-1">Name</label>
@@ -52,7 +90,9 @@ export default function ContactForm({ services, cities }: { services: { slug: st
         <label htmlFor="description" className="block text-sm font-medium text-brand-charcoal mb-1">Project Description</label>
         <textarea id="description" name="description" rows={4} required className="w-full border border-brand-gray-mid rounded-md px-4 py-2.5 text-brand-charcoal focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent resize-y" />
       </div>
-      <button type="submit" className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold px-8 py-3 rounded-md transition-colors">Submit Request</button>
+      <button type="submit" disabled={loading} className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold px-8 py-3 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+        {loading ? 'Sending...' : 'Submit Request'}
+      </button>
     </form>
   )
 }

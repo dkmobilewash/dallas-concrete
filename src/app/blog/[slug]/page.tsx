@@ -18,7 +18,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const post = getPostBySlug(params.slug)
   if (!post) return {}
   return buildMetadata({
-    title: `${post.title} | Dallas Concrete Solutions Blog`,
+    title: post.title,
     description: post.description,
     canonical: `${site.baseUrl}/blog/${post.slug}`,
   })

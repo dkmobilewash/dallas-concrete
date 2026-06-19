@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button'
 import CtaSection from '@/components/sections/CtaSection'
 
 export const metadata = buildMetadata({
-  title: 'About Dallas Concrete Solutions | Concrete Contractors Dallas TX',
+  title: 'About Our Dallas Concrete Company',
   description: 'Learn about Dallas Concrete Solutions — a licensed and insured concrete contractor serving residential and commercial clients across the Dallas-Fort Worth metro area.',
   canonical: `${site.baseUrl}/about`,
 })

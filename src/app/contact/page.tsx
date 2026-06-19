@@ -7,7 +7,7 @@ import { Phone, Mail, Clock } from 'lucide-react'
 import ContactForm from './ContactForm'
 
 export const metadata = buildMetadata({
-  title: 'Contact Us | Get a Free Concrete Estimate in Dallas TX',
+  title: 'Get a Free Concrete Estimate in Dallas TX',
   description: 'Contact Dallas Concrete Solutions for a free concrete estimate. Call 214-239-0709 or fill out our online form for driveways, patios, foundations, and more.',
   canonical: `${site.baseUrl}/contact`,
 })

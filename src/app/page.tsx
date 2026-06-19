@@ -7,11 +7,16 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import FaqSection from '@/components/sections/FaqSection'
 import CtaSection from '@/components/sections/CtaSection'
 
-export const metadata = buildMetadata({
-  title: 'Dallas Concrete Contractors | Dallas Concrete Solutions',
+const meta = buildMetadata({
+  title: 'Dallas Concrete Contractors',
   description: 'Dallas Concrete Solutions offers professional concrete contracting for driveways, patios, foundations, and more throughout Dallas and the surrounding areas. Call 214-239-0709 for a free estimate.',
   canonical: 'https://www.dallasconcretesolutions.net',
 })
+
+export const metadata = {
+  ...meta,
+  title: { absolute: 'Dallas Concrete Contractors | Dallas Concrete Solutions' },
+}
 
 const faqs = [
   { question: 'How much does a concrete driveway cost in Dallas?', answer: 'Concrete driveway costs in Dallas vary depending on the size, thickness, finish, and site preparation required. A standard two-car driveway typically costs between $3,000 and $7,000. We provide free on-site estimates so you get an accurate price for your specific project.' },

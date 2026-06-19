@@ -10,6 +10,12 @@ export const metadata: Metadata = {
     template: '%s | Dallas Concrete Solutions',
   },
   description: 'Professional concrete contracting for driveways, patios, foundations, and more throughout Dallas and the surrounding areas.',
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: {
+      'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '',
+    },
+  },
 }
 
 export default function RootLayout({

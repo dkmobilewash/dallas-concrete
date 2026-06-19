@@ -5,7 +5,7 @@ import { getAllPosts } from '@/lib/blog'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata = buildMetadata({
-  title: 'Concrete Tips & Resources | Dallas Concrete Solutions Blog',
+  title: 'Concrete Tips & Resources for Dallas Homeowners',
   description: 'Helpful articles about concrete driveways, patios, foundations, and more for Dallas homeowners. Tips, guides, and project ideas from Dallas Concrete Solutions.',
   canonical: `${site.baseUrl}/blog`,
 })
