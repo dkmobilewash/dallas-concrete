@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { buildMetadata } from '@/lib/metadata'
 import { site } from '@/data/site'
 import { getAllPosts } from '@/lib/blog'
@@ -15,6 +16,16 @@ const breadcrumbs = [
   { name: 'Home', href: '/' },
   { name: 'Blog', href: '/blog' },
 ]
+
+const blogImages: Record<string, string> = {
+  'how-to-prepare-property-for-concrete-driveway-pour': '/concrete-images/concrete-driveway-installation.jpg',
+  'stamped-concrete-vs-pavers-dallas-patio': '/concrete-images/concrete-patio-installation-prosper-tx.jpg',
+  'understanding-concrete-curing-texas-heat': '/concrete-images/concrete-installation-frisco-west-tx.jpg',
+  'how-much-does-concrete-patio-cost-dallas': '/concrete-images/concrete-back-patio-contractor-hutchins-tx.jpg',
+  'best-time-pour-concrete-north-texas': '/concrete-images/concrete-installation-chapel-creek-frisco-tx.jpg',
+  'signs-concrete-driveway-needs-replacement': '/concrete-images/concrete-driveway-isntallation-before-and-after-west-dallas.jpg',
+  'dallas-foundation-problems-clay-soil-concrete': '/concrete-images/concrete-foundation-installation-frisco-starwood-tx.jpg',
+}
 
 export default function BlogPage() {
   const posts = getAllPosts()
@@ -33,8 +44,20 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {posts.map((post) => (
               <article key={post.slug} className="bg-white rounded-lg border border-brand-gray-mid/30 overflow-hidden group">
-                <div className="aspect-video bg-brand-gray-light flex items-center justify-center">
-                  <span className="text-brand-gray text-sm">Image coming soon</span>
+                <div className="relative aspect-video overflow-hidden">
+                  {blogImages[post.slug] ? (
+                    <Image
+                      src={blogImages[post.slug]}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-brand-gray-light flex items-center justify-center">
+                      <span className="text-brand-gray text-sm">Image coming soon</span>
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <time dateTime={post.date} className="text-xs text-brand-gray">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>

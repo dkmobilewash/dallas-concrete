@@ -7,6 +7,7 @@ export interface Service {
   metaDescription: string
   heroSubhead: string
   icon: string
+  image: string
   relatedSlugs: string[]
 }
 
@@ -20,6 +21,7 @@ export const services: Service[] = [
     metaDescription: 'Professional concrete driveway installation and replacement in Dallas, TX. Get a free estimate from Dallas Concrete Solutions — 214-239-0709.',
     heroSubhead: 'Durable, professionally installed driveways built for North Texas conditions.',
     icon: 'Car',
+    image: '/concrete-images/concrete-driveway-installation-wolf-creek-dallas.jpg',
     relatedSlugs: ['concrete-patios', 'concrete-walkways', 'stamped-concrete'],
   },
   {
@@ -31,6 +33,7 @@ export const services: Service[] = [
     metaDescription: 'Custom concrete patio installation in Dallas and surrounding areas. Expand your outdoor living space. Free estimates — 214-239-0709.',
     heroSubhead: 'Transform your backyard into a functional, beautiful outdoor living area.',
     icon: 'Sofa',
+    image: '/concrete-images/concrete-patio-installation-oak-cliff-dallas.jpg',
     relatedSlugs: ['stamped-concrete', 'concrete-walkways', 'concrete-driveways'],
   },
   {
@@ -42,6 +45,7 @@ export const services: Service[] = [
     metaDescription: 'Concrete walkway and sidewalk installation in Dallas, TX. Safe, durable paths for residential and commercial properties. Free estimates.',
     heroSubhead: 'Safe, clean pathways that add curb appeal and function to your property.',
     icon: 'FootprintsIcon',
+    image: '/concrete-images/garland-tx-commerical-concrete-sidewalk-installation.jpg',
     relatedSlugs: ['concrete-driveways', 'concrete-patios', 'stamped-concrete'],
   },
   {
@@ -53,6 +57,7 @@ export const services: Service[] = [
     metaDescription: 'Expert concrete foundation installation and repair in Dallas, TX. Built to withstand North Texas soil conditions. Call 214-239-0709.',
     heroSubhead: 'Engineered foundations built for the unique challenges of North Texas soil.',
     icon: 'Building2',
+    image: '/concrete-images/commcerical-concretet-slab-foundation-dallas.jpg',
     relatedSlugs: ['commercial-concrete', 'concrete-driveways'],
   },
   {
@@ -64,6 +69,7 @@ export const services: Service[] = [
     metaDescription: 'Custom concrete retaining wall installation in Dallas. Solve drainage and erosion issues with lasting concrete solutions. Free estimates.',
     heroSubhead: 'Structural and decorative retaining walls that manage grade changes and protect your landscape.',
     icon: 'Layers',
+    image: '/concrete-images/concrete-retention-wall-frisco-tx.jpg',
     relatedSlugs: ['concrete-foundations', 'concrete-patios'],
   },
   {
@@ -75,6 +81,7 @@ export const services: Service[] = [
     metaDescription: 'Decorative stamped concrete for driveways, patios, and walkways in Dallas, TX. Premium finishes at competitive prices. Call 214-239-0709.',
     heroSubhead: 'The look of stone, brick, or slate — the durability of concrete.',
     icon: 'Palette',
+    image: '/concrete-images/frisco-concrete-patio-isntallation.jpg',
     relatedSlugs: ['concrete-patios', 'concrete-driveways', 'concrete-walkways'],
   },
   {
@@ -86,6 +93,7 @@ export const services: Service[] = [
     metaDescription: 'Commercial concrete services for Dallas businesses — parking lots, warehouse floors, sidewalks, and foundations. Licensed and insured.',
     heroSubhead: 'Scalable concrete solutions for commercial projects across the Dallas metro.',
     icon: 'Warehouse',
+    image: '/concrete-images/commerical-concrete-slab-contractor-frisco.jpg',
     relatedSlugs: ['concrete-foundations', 'retaining-walls', 'concrete-driveways'],
   },
 ]

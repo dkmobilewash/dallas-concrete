@@ -2,6 +2,7 @@ import { buildMetadata } from '@/lib/metadata'
 import HeroSection from '@/components/sections/HeroSection'
 import ServicesGrid from '@/components/sections/ServicesGrid'
 import WhyChooseUs from '@/components/sections/WhyChooseUs'
+import ProjectGallery from '@/components/sections/ProjectGallery'
 import ServiceAreasSection from '@/components/sections/ServiceAreasSection'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import FaqSection from '@/components/sections/FaqSection'
@@ -35,6 +36,7 @@ export default function HomePage() {
       />
       <ServicesGrid />
       <WhyChooseUs />
+      <ProjectGallery />
       <ServiceAreasSection />
       <TestimonialsSection />
       <FaqSection faqs={faqs} />

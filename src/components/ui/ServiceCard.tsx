@@ -1,10 +1,7 @@
 import Link from 'next/link'
-import { Car, Sofa, Footprints, Building2, Layers, Palette, Warehouse, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 import type { Service } from '@/data/services'
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Car, Sofa, FootprintsIcon: Footprints, Building2, Layers, Palette, Warehouse,
-}
 
 const descriptions: Record<string, string> = {
   'concrete-driveways': 'Professionally installed concrete driveways built to handle daily use and North Texas weather.',
@@ -17,19 +14,27 @@ const descriptions: Record<string, string> = {
 }
 
 export default function ServiceCard({ service }: { service: Service }) {
-  const Icon = iconMap[service.icon]
-
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all border-b-2 border-transparent hover:border-brand-orange"
+      className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border-b-2 border-transparent hover:border-brand-orange"
     >
-      {Icon && <Icon className="w-6 h-6 text-brand-orange mb-4" />}
-      <h3 className="text-lg font-semibold text-brand-charcoal mb-2">{service.name}</h3>
-      <p className="text-brand-gray text-sm mb-4">{descriptions[service.slug]}</p>
-      <span className="inline-flex items-center text-brand-orange text-sm font-medium group-hover:gap-2 transition-all">
-        Learn More <ArrowRight className="w-4 h-4 ml-1" />
-      </span>
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <Image
+          src={service.image}
+          alt={`${service.name} in Dallas TX`}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-brand-charcoal mb-2">{service.name}</h3>
+        <p className="text-brand-gray text-sm mb-4">{descriptions[service.slug]}</p>
+        <span className="inline-flex items-center text-brand-orange-dark text-sm font-medium group-hover:gap-2 transition-all">
+          Learn More <ArrowRight className="w-4 h-4 ml-1" />
+        </span>
+      </div>
     </Link>
   )
 }
