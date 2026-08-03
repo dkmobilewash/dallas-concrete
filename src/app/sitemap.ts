@@ -19,6 +19,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  const serviceCityUrls = cities.flatMap((c) =>
+    services.map((s) => ({
+      url: `${site.baseUrl}/service-areas/${c.slug}/${s.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  )
+
   const blogUrls = getAllPosts().map((post) => ({
     url: `${site.baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -33,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.baseUrl}/blog`, priority: 0.5, changeFrequency: 'weekly' },
     ...serviceUrls,
     ...cityUrls,
+    ...serviceCityUrls,
     ...blogUrls,
   ]
 }

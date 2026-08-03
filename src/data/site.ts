@@ -4,9 +4,12 @@ export const site = {
   phoneHref: 'tel:+12142390709',
   email: 'info@dallasconcretesolutions.net',
   address: {
-    city: 'Dallas',
-    state: 'TX',
+    streetAddress: '14135 Midway Rd',
+    city: 'Addison',
+    state: 'Texas',
     stateCode: 'TX',
+    postalCode: '75001',
+    geo: { latitude: 32.9537, longitude: -96.8388 },
   },
   hours: {
     weekdays: 'Monday–Saturday: 8:00 AM – 6:00 PM',

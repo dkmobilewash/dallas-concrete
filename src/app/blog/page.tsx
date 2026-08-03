@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { buildMetadata } from '@/lib/metadata'
 import { site } from '@/data/site'
 import { getAllPosts } from '@/lib/blog'
+import BreadcrumbNav from '@/components/ui/BreadcrumbNav'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata = buildMetadata({
@@ -10,6 +11,11 @@ export const metadata = buildMetadata({
   canonical: `${site.baseUrl}/blog`,
 })
 
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Blog', href: '/blog' },
+]
+
 export default function BlogPage() {
   const posts = getAllPosts()
 
@@ -17,6 +23,7 @@ export default function BlogPage() {
     <>
       <section className="bg-brand-charcoal text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <BreadcrumbNav items={breadcrumbs} />
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">Concrete Tips &amp; Resources for Dallas Homeowners</h1>
           <p className="text-lg text-white/80 max-w-2xl">Practical guides and insights to help you make informed decisions about your concrete projects.</p>
         </div>
@@ -33,7 +40,7 @@ export default function BlogPage() {
                   <time dateTime={post.date} className="text-xs text-brand-gray">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                   <h2 className="text-lg font-semibold text-brand-charcoal mt-2 mb-2">{post.title}</h2>
                   <p className="text-brand-gray text-sm leading-relaxed mb-4">{post.excerpt}</p>
-                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-brand-orange text-sm font-medium group-hover:gap-2 transition-all">
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-brand-orange-dark text-sm font-medium group-hover:gap-2 transition-all">
                     Read Article <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </div>

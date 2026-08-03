@@ -9,11 +9,19 @@ export default function LocalBusinessSchema({ city }: { city?: string }) {
     url: site.baseUrl,
     telephone: site.phone,
     email: site.email,
+    priceRange: '$$',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: site.address.streetAddress,
       addressLocality: city || site.address.city,
       addressRegion: site.address.stateCode,
+      postalCode: site.address.postalCode,
       addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: site.address.geo.latitude,
+      longitude: site.address.geo.longitude,
     },
     areaServed: [
       'Dallas, TX', 'Irving, TX', 'Garland, TX',

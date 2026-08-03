@@ -10,7 +10,18 @@ body {
   --tw-prose-headings: #1C1C1E;
   --tw-prose-body: #6B7280;
   --tw-prose-bold: #1C1C1E;
-  --tw-prose-links: #E8520A;
+  --tw-prose-links: #C4420A;
   --tw-prose-bullets: #E8520A;
   --tw-prose-counters: #E8520A;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    size-adjust: 107%;
+    ascent-override: 90%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+  }
 }

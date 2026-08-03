@@ -11,11 +11,15 @@ export const metadata: Metadata = {
     template: '%s | Dallas Concrete Solutions',
   },
   description: 'Professional concrete contracting for driveways, patios, foundations, and more throughout Dallas and the surrounding areas.',
+  metadataBase: new URL('https://www.dallasconcretesolutions.net'),
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
     other: {
       'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '',
     },
+  },
+  other: {
+    'theme-color': '#1C1C1E',
   },
 }
 
@@ -27,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <head>
+        <meta name="theme-color" content="#1C1C1E" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
         <>
@@ -43,9 +49,12 @@ export default function RootLayout({
         </>
       )}
       <body className="min-h-full flex flex-col font-sans">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand-orange focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-semibold">
+          Skip to main content
+        </a>
         <LocalBusinessSchema />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

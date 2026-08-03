@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone, Mail, Clock } from 'lucide-react'
+import { Phone, Mail, Clock, MapPin } from 'lucide-react'
 import { services } from '@/data/services'
 import { cities } from '@/data/cities'
 import { site } from '@/data/site'
@@ -38,6 +38,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><a href={site.phoneHref} className="flex items-center gap-2 text-sm text-white/70 hover:text-brand-orange transition-colors"><Phone className="w-4 h-4 text-brand-orange shrink-0" />{site.phone}</a></li>
               <li><a href={`mailto:${site.email}`} className="flex items-center gap-2 text-sm text-white/70 hover:text-brand-orange transition-colors"><Mail className="w-4 h-4 text-brand-orange shrink-0" />{site.email}</a></li>
+              <li className="flex items-start gap-2 text-sm text-white/70"><MapPin className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" /><span>{site.address.streetAddress}<br />{site.address.city}, {site.address.stateCode} {site.address.postalCode}</span></li>
             </ul>
           </div>
         </div>

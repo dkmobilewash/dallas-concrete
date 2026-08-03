@@ -298,7 +298,16 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <section className="py-12 bg-brand-gray-light">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-brand-gray leading-relaxed">
-            We install {service.name.toLowerCase()} throughout Dallas, Irving, Plano, Frisco, McKinney, Garland, Grand Prairie, Mesquite, and surrounding cities. Contact us for a free estimate.
+            We install {service.name.toLowerCase()} throughout{' '}
+            <Link href="/service-areas/dallas" className="text-brand-orange-dark hover:underline">Dallas</Link>,{' '}
+            <Link href="/service-areas/irving" className="text-brand-orange-dark hover:underline">Irving</Link>,{' '}
+            <Link href="/service-areas/plano" className="text-brand-orange-dark hover:underline">Plano</Link>,{' '}
+            <Link href="/service-areas/frisco" className="text-brand-orange-dark hover:underline">Frisco</Link>,{' '}
+            <Link href="/service-areas/mckinney" className="text-brand-orange-dark hover:underline">McKinney</Link>,{' '}
+            <Link href="/service-areas/garland" className="text-brand-orange-dark hover:underline">Garland</Link>,{' '}
+            <Link href="/service-areas/grand-prairie" className="text-brand-orange-dark hover:underline">Grand Prairie</Link>,{' '}
+            <Link href="/service-areas/mesquite" className="text-brand-orange-dark hover:underline">Mesquite</Link>,{' '}
+            and surrounding cities. <Link href="/contact" className="text-brand-orange-dark hover:underline">Contact us</Link> for a free estimate.
           </p>
         </div>
       </section>

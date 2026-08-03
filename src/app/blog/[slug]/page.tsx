@@ -6,6 +6,7 @@ import { getAllPosts, getPostBySlug } from '@/lib/blog'
 import { site } from '@/data/site'
 import { buildMetadata } from '@/lib/metadata'
 import BreadcrumbNav from '@/components/ui/BreadcrumbNav'
+import ArticleSchema from '@/components/seo/ArticleSchema'
 import CtaSection from '@/components/sections/CtaSection'
 import { ArrowLeft } from 'lucide-react'
 
@@ -36,6 +37,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <ArticleSchema
+        title={post.title}
+        description={post.description}
+        date={post.date}
+        slug={post.slug}
+      />
+
       <section className="bg-brand-charcoal text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <BreadcrumbNav items={breadcrumbs} />
@@ -53,7 +61,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       </article>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <Link href="/blog" className="inline-flex items-center text-brand-orange hover:text-brand-orange-dark font-medium transition-colors">
+        <Link href="/blog" className="inline-flex items-center text-brand-orange-dark hover:text-brand-charcoal font-medium transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />Back to All Articles
         </Link>
       </div>
