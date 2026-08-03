@@ -3,13 +3,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import { services } from '@/data/services'
+import { cities } from '@/data/cities'
 import { site } from '@/data/site'
 import { buildMetadata } from '@/lib/metadata'
 import BreadcrumbNav from '@/components/ui/BreadcrumbNav'
 import FaqAccordion from '@/components/ui/FaqAccordion'
 import ServiceSchema from '@/components/seo/ServiceSchema'
 import CtaSection from '@/components/sections/CtaSection'
-import { CheckCircle, ArrowRight } from 'lucide-react'
+import { CheckCircle, ArrowRight, MapPin } from 'lucide-react'
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -306,20 +307,24 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </section>
       )}
 
-      <section className="py-12 bg-brand-gray-light">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-brand-gray leading-relaxed">
-            We install {service.name.toLowerCase()} throughout{' '}
-            <Link href="/service-areas/dallas" className="text-brand-orange-dark hover:underline">Dallas</Link>,{' '}
-            <Link href="/service-areas/irving" className="text-brand-orange-dark hover:underline">Irving</Link>,{' '}
-            <Link href="/service-areas/plano" className="text-brand-orange-dark hover:underline">Plano</Link>,{' '}
-            <Link href="/service-areas/frisco" className="text-brand-orange-dark hover:underline">Frisco</Link>,{' '}
-            <Link href="/service-areas/mckinney" className="text-brand-orange-dark hover:underline">McKinney</Link>,{' '}
-            <Link href="/service-areas/garland" className="text-brand-orange-dark hover:underline">Garland</Link>,{' '}
-            <Link href="/service-areas/grand-prairie" className="text-brand-orange-dark hover:underline">Grand Prairie</Link>,{' '}
-            <Link href="/service-areas/mesquite" className="text-brand-orange-dark hover:underline">Mesquite</Link>,{' '}
-            and surrounding cities. <Link href="/contact" className="text-brand-orange-dark hover:underline">Contact us</Link> for a free estimate.
-          </p>
+      <section className="py-16 md:py-20 bg-brand-gray-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-brand-charcoal mb-8 text-center">
+            Areas We Offer {service.name} In
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {cities.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/${service.slug}/${c.slug}`}
+                className="flex items-center gap-3 bg-white border border-brand-gray-mid/30 rounded-lg p-4 hover:border-brand-orange transition-colors group"
+              >
+                <MapPin className="w-4 h-4 text-brand-orange shrink-0" />
+                <span className="font-medium text-brand-charcoal">{c.name}, TX</span>
+                <ArrowRight className="w-4 h-4 text-brand-orange ml-auto group-hover:translate-x-1 transition-transform" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

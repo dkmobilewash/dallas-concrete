@@ -19,9 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  const serviceCityUrls = cities.flatMap((c) =>
-    services.map((s) => ({
-      url: `${site.baseUrl}/service-areas/${c.slug}/${s.slug}`,
+  const serviceCityUrls = services.flatMap((s) =>
+    cities.map((c) => ({
+      url: `${site.baseUrl}/${s.slug}/${c.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
