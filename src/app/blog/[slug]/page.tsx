@@ -61,7 +61,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       </article>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <Link href="/blog" className="inline-flex items-center text-brand-orange-dark hover:text-brand-charcoal font-medium transition-colors">
+        <Link href="/blog" className="inline-flex items-center text-brand-blue-dark hover:text-brand-charcoal font-medium transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />Back to All Articles
         </Link>
       </div>

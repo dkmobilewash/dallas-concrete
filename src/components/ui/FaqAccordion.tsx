@@ -22,7 +22,7 @@ export default function FaqAccordion({ faqs }: { faqs: { question: string; answe
           >
             <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-brand-gray-light/50 transition-colors list-none [&::-webkit-details-marker]:hidden">
               <span className="font-semibold text-brand-charcoal pr-4">{faq.question}</span>
-              <span className="text-brand-orange text-xl font-bold shrink-0">
+              <span className="text-brand-blue text-xl font-bold shrink-0">
                 {openIndex === index ? '−' : '+'}
               </span>
             </summary>

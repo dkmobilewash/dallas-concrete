@@ -10,9 +10,9 @@ body {
   --tw-prose-headings: #1C1C1E;
   --tw-prose-body: #6B7280;
   --tw-prose-bold: #1C1C1E;
-  --tw-prose-links: #C4420A;
-  --tw-prose-bullets: #E8520A;
-  --tw-prose-counters: #E8520A;
+  --tw-prose-links: #042468;
+  --tw-prose-bullets: #063289;
+  --tw-prose-counters: #063289;
 }
 
 @layer base {

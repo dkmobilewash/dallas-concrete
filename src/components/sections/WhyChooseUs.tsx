@@ -20,7 +20,7 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason) => (
             <div key={reason.title} className="flex gap-4">
-              <reason.icon className="w-6 h-6 text-brand-orange shrink-0 mt-1" />
+              <reason.icon className="w-6 h-6 text-brand-blue shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-brand-charcoal mb-1">{reason.title}</h3>
                 <p className="text-brand-gray text-sm leading-relaxed">{reason.description}</p>

@@ -63,7 +63,7 @@ export default function BlogPage() {
                   <time dateTime={post.date} className="text-xs text-brand-gray">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                   <h2 className="text-lg font-semibold text-brand-charcoal mt-2 mb-2">{post.title}</h2>
                   <p className="text-brand-gray text-sm leading-relaxed mb-4">{post.excerpt}</p>
-                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-brand-orange-dark text-sm font-medium group-hover:gap-2 transition-all">
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-brand-blue-dark text-sm font-medium group-hover:gap-2 transition-all">
                     Read Article <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </div>

@@ -156,7 +156,7 @@ export default function ServiceCityPage({ params }: { params: { service: string;
             <div className="space-y-4">
               {highlights.map((highlight) => (
                 <div key={highlight} className="flex gap-3 bg-white rounded-lg p-4">
-                  <CheckCircle className="w-5 h-5 text-brand-orange shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue shrink-0 mt-0.5" />
                   <p className="text-brand-gray">{highlight}</p>
                 </div>
               ))}
@@ -174,7 +174,7 @@ export default function ServiceCityPage({ params }: { params: { service: string;
             Ready to start your {service.name.toLowerCase()} project in {city.name}? We provide free on-site estimates with no obligation. Call us directly or fill out our online form.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={site.phoneHref} className="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold px-6 py-3 rounded-md transition-colors">
+            <a href={site.phoneHref} className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-6 py-3 rounded-md transition-colors">
               <Phone className="w-5 h-5" />{site.phone}
             </a>
             <Button href="/contact">Request Estimate Online</Button>
@@ -192,10 +192,10 @@ export default function ServiceCityPage({ params }: { params: { service: string;
               <Link
                 key={s.slug}
                 href={`/${s.slug}/${city.slug}`}
-                className="flex items-center justify-between bg-white border border-brand-gray-mid/30 rounded-lg p-4 hover:border-brand-orange transition-colors group"
+                className="flex items-center justify-between bg-white border border-brand-gray-mid/30 rounded-lg p-4 hover:border-brand-blue transition-colors group"
               >
                 <span className="font-medium text-brand-charcoal">{s.name}</span>
-                <ArrowRight className="w-4 h-4 text-brand-orange group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-brand-blue group-hover:translate-x-1 transition-transform" />
               </Link>
             ))}
           </div>
@@ -212,7 +212,7 @@ export default function ServiceCityPage({ params }: { params: { service: string;
               <Link
                 key={c.slug}
                 href={`/${service.slug}/${c.slug}`}
-                className="text-sm text-brand-orange-dark hover:underline px-3 py-1 bg-brand-gray-light rounded-full"
+                className="text-sm text-brand-blue-dark hover:underline px-3 py-1 bg-brand-gray-light rounded-full"
               >
                 {c.name}, TX
               </Link>

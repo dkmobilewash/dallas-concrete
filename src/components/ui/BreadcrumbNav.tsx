@@ -14,7 +14,7 @@ export default function BreadcrumbNav({ items }: { items: { name: string; href: 
               {index === items.length - 1 ? (
                 <span className="text-brand-gray">{item.name}</span>
               ) : (
-                <Link href={item.href} className="text-brand-orange hover:text-brand-orange-dark transition-colors">
+                <Link href={item.href} className="text-brand-blue hover:text-brand-blue-dark transition-colors">
                   {item.name}
                 </Link>
               )}

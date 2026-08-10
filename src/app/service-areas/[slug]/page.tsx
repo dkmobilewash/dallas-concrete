@@ -456,9 +456,9 @@ export default function CityPage({ params }: { params: { slug: string } }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {details.caseStudies.map((study, index) => (
               <div key={index} className="bg-white border border-brand-gray-mid/30 rounded-lg p-6">
-                <Briefcase className="w-6 h-6 text-brand-orange mb-3" />
+                <Briefcase className="w-6 h-6 text-brand-blue mb-3" />
                 <h3 className="font-bold text-brand-charcoal mb-1">{study.title}</h3>
-                <p className="text-sm text-brand-orange font-medium mb-4">{study.location}</p>
+                <p className="text-sm text-brand-blue font-medium mb-4">{study.location}</p>
                 <div className="space-y-3 text-sm">
                   <div>
                     <p className="font-semibold text-brand-charcoal">Challenge</p>
@@ -486,7 +486,7 @@ export default function CityPage({ params }: { params: { slug: string } }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {details.whyNumberOne.map((reason, index) => (
               <div key={index} className="bg-white border border-brand-gray-mid/30 rounded-lg p-6 flex gap-4">
-                <Award className="w-6 h-6 text-brand-orange shrink-0 mt-1" />
+                <Award className="w-6 h-6 text-brand-blue shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-brand-charcoal mb-2">{reason.title}</h3>
                   <p className="text-brand-gray leading-relaxed text-sm">{reason.description}</p>
@@ -503,9 +503,9 @@ export default function CityPage({ params }: { params: { slug: string } }) {
           <h2 className="text-2xl font-bold text-brand-charcoal mb-8 text-center">Services We Offer in {city.name}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s) => (
-              <Link key={s.slug} href={`/${s.slug}/${city.slug}`} className="flex items-center justify-between bg-white border border-brand-gray-mid/30 rounded-lg p-4 hover:border-brand-orange transition-colors group">
+              <Link key={s.slug} href={`/${s.slug}/${city.slug}`} className="flex items-center justify-between bg-white border border-brand-gray-mid/30 rounded-lg p-4 hover:border-brand-blue transition-colors group">
                 <span className="font-medium text-brand-charcoal">{s.name} in {city.name}</span>
-                <ArrowRight className="w-4 h-4 text-brand-orange group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-brand-blue group-hover:translate-x-1 transition-transform" />
               </Link>
             ))}
           </div>
@@ -521,14 +521,14 @@ export default function CityPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-brand-orange text-white">
+      <section className="py-16 md:py-20 bg-brand-blue text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Get a Free Concrete Estimate in {city.name}</h2>
           <p className="text-white/90 leading-relaxed mb-8 max-w-xl mx-auto">
             Ready to start your driveway, patio, or commercial concrete project in {city.name}? Call us today or request a free on-site estimate — Dallas Concrete Solutions is licensed, insured, and ready to help.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={site.phoneHref} className="inline-flex items-center gap-2 bg-white text-brand-orange font-bold px-6 py-3 rounded-md hover:bg-brand-gray-light transition-colors">
+            <a href={site.phoneHref} className="inline-flex items-center gap-2 bg-white text-brand-blue font-bold px-6 py-3 rounded-md hover:bg-brand-gray-light transition-colors">
               <Phone className="w-5 h-5" />
               Call {site.phone}
             </a>

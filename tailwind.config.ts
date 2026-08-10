@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         brand: {
           charcoal: '#1C1C1E',
-          orange: '#E8520A',
-          'orange-dark': '#C4420A',
+          blue: '#063289',
+          'blue-dark': '#042468',
           gray: '#6B7280',
           'gray-light': '#F3F4F6',
           'gray-mid': '#D1D5DB',

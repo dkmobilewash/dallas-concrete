@@ -32,7 +32,7 @@ export default function Image() {
             style={{
               width: '80px',
               height: '6px',
-              backgroundColor: '#E8520A',
+              backgroundColor: '#063289',
               borderRadius: '3px',
             }}
           />
@@ -68,7 +68,7 @@ export default function Image() {
             <div
               style={{
                 fontSize: '22px',
-                color: '#E8520A',
+                color: '#063289',
                 fontWeight: 600,
               }}
             >

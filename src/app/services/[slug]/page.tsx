@@ -410,7 +410,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <div className="space-y-6">
             {content.process.map((step, i) => (
               <div key={step.step} className="flex gap-4">
-                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange text-white font-bold text-sm shrink-0">{i + 1}</div>
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-blue text-white font-bold text-sm shrink-0">{i + 1}</div>
                 <div>
                   <h3 className="font-semibold text-brand-charcoal mb-1">{step.step}</h3>
                   <p className="text-brand-gray text-sm leading-relaxed">{step.description}</p>
@@ -428,7 +428,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {content.included.map((item) => (
               <div key={item} className="flex gap-3 bg-white border border-brand-gray-mid/30 rounded-lg p-4">
-                <CheckCircle className="w-5 h-5 text-brand-orange shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-brand-blue shrink-0 mt-0.5" />
                 <span className="text-brand-gray leading-relaxed">{item}</span>
               </div>
             ))}
@@ -440,7 +440,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <section className="py-16 md:py-20 bg-brand-gray-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="flex items-center justify-center gap-2 text-2xl font-bold text-brand-charcoal mb-8 text-center">
-            <Star className="w-6 h-6 text-brand-orange" />
+            <Star className="w-6 h-6 text-brand-blue" />
             How Dallas Concrete Solutions Stands Out in DFW
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -458,7 +458,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="flex items-center justify-center gap-2 text-2xl font-bold text-brand-charcoal mb-8 text-center">
-            <Users className="w-6 h-6 text-brand-orange" />
+            <Users className="w-6 h-6 text-brand-blue" />
             Who Benefits From {service.name}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -483,11 +483,11 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               <Link
                 key={c.slug}
                 href={`/${service.slug}/${c.slug}`}
-                className="flex items-center gap-3 bg-white border border-brand-gray-mid/30 rounded-lg p-4 hover:border-brand-orange transition-colors group"
+                className="flex items-center gap-3 bg-white border border-brand-gray-mid/30 rounded-lg p-4 hover:border-brand-blue transition-colors group"
               >
-                <MapPin className="w-4 h-4 text-brand-orange shrink-0" />
+                <MapPin className="w-4 h-4 text-brand-blue shrink-0" />
                 <span className="font-medium text-brand-charcoal">{c.name}, TX</span>
-                <ArrowRight className="w-4 h-4 text-brand-orange ml-auto group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-brand-blue ml-auto group-hover:translate-x-1 transition-transform" />
               </Link>
             ))}
           </div>

@@ -17,7 +17,7 @@ export default function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border-b-2 border-transparent hover:border-brand-orange"
+      className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border-b-2 border-transparent hover:border-brand-blue"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
@@ -31,7 +31,7 @@ export default function ServiceCard({ service }: { service: Service }) {
       <div className="p-6">
         <h3 className="text-lg font-semibold text-brand-charcoal mb-2">{service.name}</h3>
         <p className="text-brand-gray text-sm mb-4">{descriptions[service.slug]}</p>
-        <span className="inline-flex items-center text-brand-orange-dark text-sm font-medium group-hover:gap-2 transition-all">
+        <span className="inline-flex items-center text-brand-blue-dark text-sm font-medium group-hover:gap-2 transition-all">
           Learn More <ArrowRight className="w-4 h-4 ml-1" />
         </span>
       </div>
