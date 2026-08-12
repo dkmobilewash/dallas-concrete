@@ -37,7 +37,7 @@ export default function Header() {
 
           <nav className="hidden lg:flex items-center gap-1">
             <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-              <button className="flex items-center gap-1 text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
+              <button aria-expanded={servicesOpen} aria-haspopup="true" className="flex items-center gap-1 text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                 Services <ChevronDown className="w-4 h-4" />
               </button>
               {servicesOpen && (
@@ -52,7 +52,7 @@ export default function Header() {
             </div>
 
             <div className="relative" onMouseEnter={() => setAreasOpen(true)} onMouseLeave={() => setAreasOpen(false)}>
-              <button className="flex items-center gap-1 text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
+              <button aria-expanded={areasOpen} aria-haspopup="true" className="flex items-center gap-1 text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                 Service Areas <ChevronDown className="w-4 h-4" />
               </button>
               {areasOpen && (
@@ -96,7 +96,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
     <div className="lg:hidden bg-brand-charcoal border-t border-brand-gray-mid/20">
       <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1">
         <div>
-          <button onClick={() => setServicesExpanded(!servicesExpanded)} className="flex items-center justify-between w-full text-white/90 hover:text-white py-2 text-sm font-medium">
+          <button onClick={() => setServicesExpanded(!servicesExpanded)} aria-expanded={servicesExpanded} aria-haspopup="true" className="flex items-center justify-between w-full text-white/90 hover:text-white py-2 text-sm font-medium">
             Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesExpanded ? 'rotate-180' : ''}`} />
           </button>
           {servicesExpanded && (
@@ -108,7 +108,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
           )}
         </div>
         <div>
-          <button onClick={() => setAreasExpanded(!areasExpanded)} className="flex items-center justify-between w-full text-white/90 hover:text-white py-2 text-sm font-medium">
+          <button onClick={() => setAreasExpanded(!areasExpanded)} aria-expanded={areasExpanded} aria-haspopup="true" className="flex items-center justify-between w-full text-white/90 hover:text-white py-2 text-sm font-medium">
             Service Areas <ChevronDown className={`w-4 h-4 transition-transform ${areasExpanded ? 'rotate-180' : ''}`} />
           </button>
           {areasExpanded && (

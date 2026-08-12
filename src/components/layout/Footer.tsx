@@ -25,7 +25,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mb-4">Services</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Services</h3>
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.slug}><Link href={`/services/${s.slug}`} className="text-sm text-white/70 hover:text-brand-blue transition-colors">{s.name}</Link></li>
@@ -33,7 +33,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mb-4">Service Areas</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Service Areas</h3>
             <ul className="space-y-2">
               {cities.map((c) => (
                 <li key={c.slug}><Link href={`/service-areas/${c.slug}`} className="text-sm text-white/70 hover:text-brand-blue transition-colors">{c.name}, TX</Link></li>
@@ -41,7 +41,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mb-4">Contact</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Contact</h3>
             <ul className="space-y-3">
               <li><a href={site.phoneHref} className="flex items-center gap-2 text-sm text-white/70 hover:text-brand-blue transition-colors"><Phone className="w-4 h-4 text-brand-blue shrink-0" />{site.phone}</a></li>
               <li><a href={`mailto:${site.email}`} className="flex items-center gap-2 text-sm text-white/70 hover:text-brand-blue transition-colors"><Mail className="w-4 h-4 text-brand-blue shrink-0" />{site.email}</a></li>
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/70">
           <p>&copy; {new Date().getFullYear()} Dallas Concrete Solutions. All rights reserved.</p>
           <p>Licensed &amp; Insured Concrete Contractor in Dallas, TX</p>
         </div>

@@ -14,14 +14,3 @@ body {
   --tw-prose-bullets: #063289;
   --tw-prose-counters: #063289;
 }
-
-@layer base {
-  @font-face {
-    font-family: 'Inter Fallback';
-    src: local('Arial');
-    size-adjust: 107%;
-    ascent-override: 90%;
-    descent-override: 22%;
-    line-gap-override: 0%;
-  }
-}
